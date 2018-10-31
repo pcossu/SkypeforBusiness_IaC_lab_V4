@@ -111,7 +111,7 @@
     "LBFrontEndName": "SFBLBFE",
     "LBBackEndName": "SFBLBBE",
     "VMservers": {
-	"VMName": [ "VM-SFB-AD01", "VM-SFB-FE01" ],
+	"VMName": [ "VM-SFB-AD01", "VM-SFB-FE01", "VM-SFB-ADFS01", "VM-SFB-RP01", "VM-SFB-EDGE01" ],
       "FENATPort": [ "33891", "33892", "33893", "33894", "33895" ],
       "VMSize": [ "Standard_D1_V2", "Standard_D2_V2", "Standard_D1_V2", "Standard_A2_V2", "Standard_A2_V2" ],
       "VMIPtype": [ "Static", "Static", "Static", "Static", "Static" ],
