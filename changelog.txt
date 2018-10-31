@@ -7,3 +7,9 @@
 # line 114 
 original:  "VMName": [ "VM-SFB-AD01", "VM-SFB-FE01", "VM-SFB-ADFS01", "VM-SFB-RP01", "VM-SFB-EDGE01" ],
 new:       "VMName": [ "VM-SFB-AD01", "VM-SFB-FE01" ],
+
+
+
+#SfB-Install.ps1
+Start-Process dism.exe -ArgumentList "/online /add-package /PackagePath:G:\Windows8.1-KB2919442-x64.cab /quiet /NoRestart" -Wait -PassThru
+Start-Process dism.exe -ArgumentList "/online /add-package /PackagePath:G:\Windows8.1-KB2982006-x64.cab /quiet /NoRestart" -Wait -PassThru

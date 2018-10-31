@@ -58,9 +58,14 @@ Start-Process -FilePath msiexec -ArgumentList /i, $DVD'Setup\amd64\setup\adminto
 Start-Process -FilePath cmd -ArgumentList /c, "G:\Silverlight_x64.exe", /q -Wait
 
 #install KB updates needed for SfB
-Start-Process -FilePath wusa -ArgumentList "G:\Windows8.1-KB2919442-x64.msu", /quiet -Wait -verbose
-Start-Process -FilePath wusa -ArgumentList "G:\Windows8.1-KB2919355-x64.msu", /quiet -Wait -verbose
-Start-Process -FilePath wusa -ArgumentList "G:\Windows8.1-KB2982006-x64.msu", /quiet, /norestart -Wait -verbose
+#Start-Process -FilePath wusa -ArgumentList "G:\Windows8.1-KB2919442-x64.msu", /quiet -Wait -verbose
+Start-Process dism.exe -ArgumentList "/online /add-package /PackagePath:G:\Windows8.1-KB2919442-x64.cab /quiet" -Wait -PassThru
+#Start-Process -FilePath wusa -ArgumentList "G:\Windows8.1-KB2919355-x64.msu", /quiet -Wait -verbose
+Start-Process dism.exe -ArgumentList "/online /add-package /PackagePath:G:\Windows8.1-KB2919355-x64.cab /quiet" -Wait -PassThru
+#Start-Process -FilePath wusa -ArgumentList "G:\Windows8.1-KB2982006-x64.msu", /quiet, /norestart -Wait -verbose
+Start-Process dism.exe -ArgumentList "/online /add-package /PackagePath:G:\Windows8.1-KB2982006-x64.cab /quiet /norestart" -Wait -PassThru
+
+
 
 Dismount-DiskImage G:\SfBServer2015.iso
 net use G: /d
