@@ -100,6 +100,7 @@ Import-Module ActiveDirectory
 
 ## Variables ##
 
+$Datetime = Get-Date -format "yyyyMMdd-HHmm"
 $Domain = Get-ADDomain
 $DomainDNSName = $Domain.DNSRoot
 $Computer = $env:computername + '.'+$Domain.DNSRoot
@@ -108,7 +109,7 @@ $Sbase = "CN=Configuration,"+$Domain.DistinguishedName
 $fileshareName = "LyncShare"
 $filesharepath = "F:\"+$fileshareName
 $Databasespaths= "F:\SQLLogs","F:\SQLData"
-$Logfilespath = "G:\Logs\"+$DomainDNSName+'\'
+$Logfilespath = "G:\Logs_"+$Datetime"\"+$DomainDNSName+'\'
 $NewTopologypath="F:\"+$domain.DNSRoot+"Topology.xml"
 New-Item G:\Share,G:\Logs -type directory -ErrorAction SilentlyContinue
 New-Item $Logfilespath -type directory -ErrorAction SilentlyContinue
