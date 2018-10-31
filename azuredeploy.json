@@ -39,9 +39,9 @@
     },
     "ShareLocation": {
       "type": "string",
-      "defaultValue": "eg: yourStorageAccountName that contain skype folder",
+      "defaultValue": "skypefbmaster",
       "metadata": {
-        "description": "skypefbmaster"
+        "description": "Your Storage Account Name that contain skype folder"
       }
     },
     "ShareAccessKey": {
