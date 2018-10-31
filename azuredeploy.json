@@ -134,6 +134,11 @@
       "offer": [ "WindowsServer", "WindowsServer", "Windows" ],
       "sku": [ "2016-Datacenter", "2016-Datacenter", "Windows-10-N-x64" ]
     },
+    "EdgeConfig": {
+      "EdgeName": "[variables('VMservers').VMName[4]]",
+      "EdgeIntIP": "[variables('VMservers').VMIPaddr[4]]",
+      "EdgeExtIP": "[variables('DMZEXT-IPaddr')[1]]"
+    },
     "tojoindomain": [ "VM-SFB-FE01", "VM-SFB-ADFS01", "VM-SFB-CL1" ],
     "PublicDnsZoneTemplateUri": "[concat(variables('_artifactsLocation'),'/nested/PublicDnsZone.json')]",
     "Shared-ResourcesTemplateUri": "[concat(variables('_artifactsLocation'),'/nested/Shared.json')]",
