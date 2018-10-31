@@ -714,9 +714,6 @@
           "AdminPassword": {
             "value": "[parameters('adminPassword')]"
           },
-          "EdgeConfig": {
-            "value": "[variables('EdgeConfig')]"
-          },
           "EdgePubIP": {
             "value": "[reference('Shared-Resources').outputs.DMZPublicIP.value]"
           },
