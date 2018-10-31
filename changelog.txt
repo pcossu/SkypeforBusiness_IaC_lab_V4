@@ -1,0 +1,9 @@
+# lab name: SkypeforBusiness_IaC_lab_V4
+# ver:
+# date:
+# author:
+
+# file: azuredeploy.json
+# line 114 
+original:  "VMName": [ "VM-SFB-AD01", "VM-SFB-FE01", "VM-SFB-ADFS01", "VM-SFB-RP01", "VM-SFB-EDGE01" ],
+new:       "VMName": [ "VM-SFB-AD01", "VM-SFB-FE01" ],
