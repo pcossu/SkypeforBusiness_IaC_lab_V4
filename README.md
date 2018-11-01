@@ -19,8 +19,11 @@ SqlConnectionFailureResolution: Make sure that SQL Server is running and you hav
 I've changed following lines in script/SfB-Install.ps1 file
 
 #install KB updates needed for SfB
+
 Start-Process -FilePath wusa -ArgumentList "G:\Windows8.1-KB2919442-x64.msu", /quiet -Wait -verbose
+
 Start-Process -FilePath wusa -ArgumentList "G:\Windows8.1-KB2919355-x64.msu", /quiet -Wait -verbose
+
 Start-Process -FilePath wusa -ArgumentList "G:\Windows8.1-KB2982006-x64.msu", /quiet, /norestart -Wait -verbose
 
 replaced with
