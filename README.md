@@ -32,3 +32,17 @@ Azure template for Skype for Business lab deployment with Edge server, ADFS and 
 ## Virtual Lab Topology
 
 The intent of version V3 is to enable deployment of Office 365 CloudPBX with On-premise PSTN Connectivity Via On-Prem Skype for Business deployment. It includes folowing components:
+
+
+
+
+
+
+## Remenber Folder Structure was changed from original
+After creating a storage account name you need to create a Fileshare named **skype** in lowercase.
+The folder structure **skype** should look like this:
+
+<a >
+<img src="https://raw.githubusercontent.com/pcossu/SkypeforBusiness_IaC_lab_V4/master/images/FolderStructure2.jpg" width="512" height="428"/>
+</a>
+
