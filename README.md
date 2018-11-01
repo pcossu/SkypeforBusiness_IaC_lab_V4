@@ -10,9 +10,12 @@ I therefore modified a couple of lines of code by applying the workaround descri
 
 These are the logs before fixing with some errors. https://github.com/pcossu/SkypeforBusiness_IaC_lab_V4/blob/master/issuelogs/Logs-Deploy-failed.zip
 
-SqlConnectionFailure: Failed to connect to SQL Server
-SqlConnectionFailure: Failed to connect to the SQL server VM-SFB-FE01.skypefb.com\lynclocal. 	 
-SqlConnectionFailureResolution: Make sure that SQL Server is running and you have enough rights to connect to the server.
+SqlConnectionFailure: Failed to connect to SQL Server.......
+
+SqlConnectionFailure: Failed to connect to the SQL server VM-SFB-FE01.skypefb.com\lynclocal......
+ 	 
+SqlConnectionFailureResolution: Make sure that SQL Server is running and you have enough rights to connect to the server.....
+
 
 These are the logs after fixing, deploy was succesfull. https://github.com/pcossu/SkypeforBusiness_IaC_lab_V4/blob/master/issuelogs/Logs-Deploy-successful.zip
 
@@ -53,7 +56,7 @@ The folder structure **skype** should look like this:
 
 
 
-You can find deployment steps in the original link https://github.com/ibenbouzid/SkypeforBusiness_lab_V3
+You can find all deployment steps in the original link https://github.com/ibenbouzid/SkypeforBusiness_lab_V3
 
 
 
