@@ -59,12 +59,14 @@ Start-Process -FilePath cmd -ArgumentList /c, "G:\Silverlight_x64.exe", /q -Wait
 
 #install KB updates needed for SfB
 #Start-Process -FilePath wusa -ArgumentList "G:\Windows8.1-KB2919442-x64.msu", /quiet -Wait -verbose
-Start-Process -FilePath dism -ArgumentList "/online /add-package /PackagePath:G:\Windows8.1-KB2919442-x64.cab /quiet" -Wait -PassThru
+Start-Process -FilePath dism -ArgumentList "/online /add-package /PackagePath:G:\Windows8.1-KB2919442-x64.cab /quiet /norestart" -Wait -PassThru > "C:\Windows8.1-KB2919442-x64_out.txt"
 #Start-Process -FilePath wusa -ArgumentList "G:\Windows8.1-KB2919355-x64.msu", /quiet -Wait -verbose
-Start-Process -FilePath dism -ArgumentList "/online /add-package /PackagePath:G:\Windows8.1-KB2919355-x64.cab /quiet" -Wait -PassThru
+Start-Process -FilePath dism -ArgumentList "/online /add-package /PackagePath:G:\Windows8.1-KB2919355-x64.cab /quiet" -Wait -PassThru > "C:\Windows8.1-KB2919355-x64_out.txt"
 #Start-Process -FilePath wusa -ArgumentList "G:\Windows8.1-KB2982006-x64.msu", /quiet, /norestart -Wait -verbose
-Start-Process -FilePath dism -ArgumentList "/online /add-package /PackagePath:G:\Windows8.1-KB2982006-x64.cab /quiet /norestart" -Wait -PassThru
+Start-Process -FilePath dism -ArgumentList "/online /add-package /PackagePath:G:\Windows8.1-KB2982006-x64.cab /quiet /norestart" -Wait -PassThru > "C:\Windows8.1-KB2982006-x64_out.txt"
 
+#Get Hotfix List
+Get-Hotfix KB2919442,KB2919355,KB2982006 > "C:\Get-Hotfix_out.txt"
 
 
 Dismount-DiskImage G:\SfBServer2015.iso
@@ -109,7 +111,8 @@ $Sbase = "CN=Configuration,"+$Domain.DistinguishedName
 $fileshareName = "LyncShare"
 $filesharepath = "F:\"+$fileshareName
 $Databasespaths= "F:\SQLLogs","F:\SQLData"
-$Logfilespath = "G:\Logs_"+$Datetime"\"+$DomainDNSName+'\'
+$Logfilespath = "G:\Logs_"+$Datetime+'\'+$DomainDNSName+'\'
+#$Logfilespath = "G:\Logs\"+$DomainDNSName+'\'
 $NewTopologypath="F:\"+$domain.DNSRoot+"Topology.xml"
 New-Item G:\Share,G:\Logs -type directory -ErrorAction SilentlyContinue
 New-Item $Logfilespath -type directory -ErrorAction SilentlyContinue
