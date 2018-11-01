@@ -27,7 +27,9 @@ replaced with
 
 #install KB updates needed for SfB
 Start-Process -FilePath dism -ArgumentList "/online /add-package /PackagePath:G:\Windows8.1-KB2919442-x64.cab /quiet /norestart" -Wait -PassThru
+
 Start-Process -FilePath dism -ArgumentList "/online /add-package /PackagePath:G:\Windows8.1-KB2919355-x64.cab /quiet" -Wait -PassThru
+
 Start-Process -FilePath dism -ArgumentList "/online /add-package /PackagePath:G:\Windows8.1-KB2982006-x64.cab /quiet /norestart" -Wait -PassThru
 
 
