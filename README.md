@@ -33,16 +33,27 @@ Azure template for Skype for Business lab deployment with Edge server, ADFS and 
 
 The intent of version V3 is to enable deployment of Office 365 CloudPBX with On-premise PSTN Connectivity Via On-Prem Skype for Business deployment. It includes folowing components:
 
+- **VM-SFB-AD01**: Active Directory Domain Controller, Certificate Authority and Internal DNS roles
+- **VM-SFB-FE01**: Skype for Business Front End Standard Edition including Mediation server
+- **VM-SFB-ADFS01**: Active Directory Federation Services server used for SSO with Azure Active Directory
+- **VM-SFB-RP01**: Reverse Proxy to publish Federation service and Skype URLs. It also plays the role of **PSTN Gateway** leveraging **Freeswitch** an open-source telephony platform and **X-lite** to simulate PSTN calls
+- **VM-SFB-EDGE01**: Skype For Business EDGE Server for remote connectivity, Hybrid and Federation purpose.
+- **Azure DNS Zone**: A Public DNS zone which includes ADFS and Skype records. You still need to own or buy a domain, check post deployment guidelines.
 
 
-
-
-
-## Remenber Folder Structure was changed from original
+Remember Folder Structure was changed from original, CAB files instead of MSU
 After creating a storage account name you need to create a Fileshare named **skype** in lowercase.
 The folder structure **skype** should look like this:
 
 <a >
 <img src="https://raw.githubusercontent.com/pcossu/SkypeforBusiness_IaC_lab_V4/master/images/FolderStructure2.jpg" width="612" height="428"/>
 </a>
+
+
+
+You can find deployment steps in the original link https://github.com/ibenbouzid/SkypeforBusiness_lab_V3
+
+
+
+
 
