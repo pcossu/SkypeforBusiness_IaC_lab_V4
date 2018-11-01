@@ -2,10 +2,8 @@
 
 This Lab refers to an automated installation of Skyper for Business Server 2015 with the paradigm of the IAC - Infrastructure as Code.
 
-I did not do anything, all the thanks are for Imad Benbouzid who has made this lab available to everyone.
-
-I just tried to deploy it but I got the error "Can not install KB2982006 - This update is not applicable to your computer."
-
+I did not do anything, all the thanks are for Imad who has made this lab available to everyone.  
+I just tried to deploy it but I got the error "Can not install KB2982006 - This update is not applicable to your computer."  
 I therefore modified a couple of lines of code by applying the workaround described in this link https://blogs.technet.microsoft.com/uclobby/2017/09/05/sfb-server-cannot-install-kb2982006-this-update-is-not-applicable-to-your-computer
 
 These are logs before fixing with some errors. https://github.com/pcossu/SkypeforBusiness_IaC_lab_V4/blob/master/issuelogs/Logs-Deploy-failed.zip
@@ -18,23 +16,17 @@ SqlConnectionFailureResolution: Make sure that SQL Server is running and you hav
 
 I've changed following lines in script/SfB-Install.ps1 file
 
-#install KB updates needed for SfB
-
-Start-Process -FilePath wusa -ArgumentList "G:\Windows8.1-KB2919442-x64.msu", /quiet -Wait -verbose
-
-Start-Process -FilePath wusa -ArgumentList "G:\Windows8.1-KB2919355-x64.msu", /quiet -Wait -verbose
-
+#install KB updates needed for SfB  
+Start-Process -FilePath wusa -ArgumentList "G:\Windows8.1-KB2919442-x64.msu", /quiet -Wait -verbose  
+Start-Process -FilePath wusa -ArgumentList "G:\Windows8.1-KB2919355-x64.msu", /quiet -Wait -verbose  
 Start-Process -FilePath wusa -ArgumentList "G:\Windows8.1-KB2982006-x64.msu", /quiet, /norestart -Wait -verbose
 
 replaced with
 
-#install KB updates needed for SfB
-Start-Process -FilePath dism -ArgumentList "/online /add-package /PackagePath:G:\Windows8.1-KB2919442-x64.cab /quiet /norestart" -Wait -PassThru
-
-Start-Process -FilePath dism -ArgumentList "/online /add-package /PackagePath:G:\Windows8.1-KB2919355-x64.cab /quiet" -Wait -PassThru
-
-Start-Process -FilePath dism -ArgumentList "/online /add-package /PackagePath:G:\Windows8.1-KB2982006-x64.cab /quiet /norestart" -Wait -PassThru
-
+#install KB updates needed for SfB  
+Start-Process -FilePath dism -ArgumentList "/online /add-package /PackagePath:G:\Windows8.1-KB2919442-x64.cab /quiet /norestart" -Wait -PassThru  
+Start-Process -FilePath dism -ArgumentList "/online /add-package /PackagePath:G:\Windows8.1-KB2919355-x64.cab /quiet" -Wait -PassThru  
+Start-Process -FilePath dism -ArgumentList "/online /add-package /PackagePath:G:\Windows8.1-KB2982006-x64.cab /quiet /norestart" -Wait -PassThru  
 
 These are logs after fixing, deploy was succesfull. https://github.com/pcossu/SkypeforBusiness_IaC_lab_V4/blob/master/issuelogs/Logs-Deploy-successful.zip
 
