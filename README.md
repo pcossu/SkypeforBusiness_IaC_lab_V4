@@ -26,13 +26,9 @@ Start-Process -FilePath wusa -ArgumentList "G:\Windows8.1-KB2982006-x64.msu", /q
 replaced with
 
 #install KB updates needed for SfB
-Start-Process -FilePath dism -ArgumentList "/online /add-package /PackagePath:G:\Windows8.1-KB2919442-x64.cab /quiet /norestart" -Wait -PassThru > "C:\Windows8.1-KB2919442-x64_out.txt"
-Start-Process -FilePath dism -ArgumentList "/online /add-package /PackagePath:G:\Windows8.1-KB2919355-x64.cab /quiet" -Wait -PassThru > "C:\Windows8.1-KB2919355-x64_out.txt"
-Start-Process -FilePath dism -ArgumentList "/online /add-package /PackagePath:G:\Windows8.1-KB2982006-x64.cab /quiet /norestart" -Wait -PassThru > "C:\Windows8.1-KB2982006-x64_out.txt"
-
-
-
-
+Start-Process -FilePath dism -ArgumentList "/online /add-package /PackagePath:G:\Windows8.1-KB2919442-x64.cab /quiet /norestart" -Wait -PassThru
+Start-Process -FilePath dism -ArgumentList "/online /add-package /PackagePath:G:\Windows8.1-KB2919355-x64.cab /quiet" -Wait -PassThru
+Start-Process -FilePath dism -ArgumentList "/online /add-package /PackagePath:G:\Windows8.1-KB2982006-x64.cab /quiet /norestart" -Wait -PassThru
 
 
 These are logs after fixing, deploy was succesfull. https://github.com/pcossu/SkypeforBusiness_IaC_lab_V4/blob/master/issuelogs/Logs-Deploy-successful.zip
