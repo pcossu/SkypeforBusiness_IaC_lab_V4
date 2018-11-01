@@ -15,6 +15,26 @@ SqlConnectionFailure: Failed to connect to the SQL server VM-SFB-FE01.skypefb.co
 SqlConnectionFailureResolution: Make sure that SQL Server is running and you have enough rights to connect to the server.....
 
 
+
+I've changed following lines in script/SfB-Install.ps1 file
+
+#install KB updates needed for SfB
+Start-Process -FilePath wusa -ArgumentList "G:\Windows8.1-KB2919442-x64.msu", /quiet -Wait -verbose
+Start-Process -FilePath wusa -ArgumentList "G:\Windows8.1-KB2919355-x64.msu", /quiet -Wait -verbose
+Start-Process -FilePath wusa -ArgumentList "G:\Windows8.1-KB2982006-x64.msu", /quiet, /norestart -Wait -verbose
+
+replaced with
+
+#install KB updates needed for SfB
+Start-Process -FilePath dism -ArgumentList "/online /add-package /PackagePath:G:\Windows8.1-KB2919442-x64.cab /quiet /norestart" -Wait -PassThru > "C:\Windows8.1-KB2919442-x64_out.txt"
+Start-Process -FilePath dism -ArgumentList "/online /add-package /PackagePath:G:\Windows8.1-KB2919355-x64.cab /quiet" -Wait -PassThru > "C:\Windows8.1-KB2919355-x64_out.txt"
+Start-Process -FilePath dism -ArgumentList "/online /add-package /PackagePath:G:\Windows8.1-KB2982006-x64.cab /quiet /norestart" -Wait -PassThru > "C:\Windows8.1-KB2982006-x64_out.txt"
+
+
+
+
+
+
 These are logs after fixing, deploy was succesfull. https://github.com/pcossu/SkypeforBusiness_IaC_lab_V4/blob/master/issuelogs/Logs-Deploy-successful.zip
 
 The tests seem to have been successful and so I have made available to those who need it.
