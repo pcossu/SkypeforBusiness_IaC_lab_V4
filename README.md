@@ -9,6 +9,7 @@ I just tried to deploy it but I got the error "Can not install KB2982006 - This 
 I therefore modified a couple of lines of code by applying the workaround described in this link https://blogs.technet.microsoft.com/uclobby/2017/09/05/sfb-server-cannot-install-kb2982006-this-update-is-not-applicable-to-your-computer
 
 These are the logs before fixing with some errors. https://github.com/pcossu/SkypeforBusiness_IaC_lab_V4/blob/master/issuelogs/Logs-Deploy-failed.zip
+
 SqlConnectionFailure: Failed to connect to SQL Server
 SqlConnectionFailure: Failed to connect to the SQL server VM-SFB-FE01.skypefb.com\lynclocal. 	 
 SqlConnectionFailureResolution: Make sure that SQL Server is running and you have enough rights to connect to the server.
