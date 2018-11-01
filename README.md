@@ -43,6 +43,7 @@ The intent of version V3 is to enable deployment of Office 365 CloudPBX with On-
 =========================================================================
 
 Remember Folder Structure was changed from original, CAB files instead of MSU
+
 After creating a storage account name you need to create a Fileshare named **skype** in lowercase.
 The folder structure **skype** should look like this:
 
