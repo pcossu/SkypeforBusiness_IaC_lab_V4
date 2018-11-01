@@ -62,7 +62,7 @@ After creating a storage account name you need to create a Fileshare named **sky
 The folder structure **skype** should look like this:
 
 <a >
-<img src="https://raw.githubusercontent.com/pcossu/SkypeforBusiness_IaC_lab_V4/master/images/FolderStructure2.jpg" width="612" height="428"/>
+<img src="https://raw.githubusercontent.com/pcossu/SkypeforBusiness_IaC_lab_V4/master/images/FolderStructure2.jpg" width="652" height="428"/>
 </a>
 
 
