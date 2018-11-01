@@ -40,6 +40,7 @@ The intent of version V3 is to enable deployment of Office 365 CloudPBX with On-
 - **VM-SFB-EDGE01**: Skype For Business EDGE Server for remote connectivity, Hybrid and Federation purpose.
 - **Azure DNS Zone**: A Public DNS zone which includes ADFS and Skype records. You still need to own or buy a domain, check post deployment guidelines.
 
+=========================================================================
 
 Remember Folder Structure was changed from original, CAB files instead of MSU
 After creating a storage account name you need to create a Fileshare named **skype** in lowercase.
