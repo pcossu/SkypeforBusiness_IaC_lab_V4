@@ -2,7 +2,8 @@
 
 This Lab refers to an automated installation of Skyper for Business Server 2015 with the paradigm of the IAC - Infrastructure as Code.
 
-I did not do anything, all the thanks are for Imad who has made this lab available to everyone.  
+Some time ago I was looking for a quick way to deploy a Skype for Business Server 2015 Lab, fortunately I found this, https://github.com/ibenbouzid/SkypeforBusiness_lab_V3 all the thanks are for Imad who has made this lab available to everyone.  
+  
 I just tried to deploy it but I got the error "Can not install KB2982006 - This update is not applicable to your computer."  
 I therefore modified a couple of lines of code by applying the workaround described in this link https://blogs.technet.microsoft.com/uclobby/2017/09/05/sfb-server-cannot-install-kb2982006-this-update-is-not-applicable-to-your-computer
 
